@@ -19,7 +19,7 @@ jobs:
         with:
           gradle-version: '8.9'
       - name: Install SDK
-        run: sdkmanager 'platforms;android-35' 'build-tools;35.0.0'
+        run: sdkmanager 'platforms;android-36' 'build-tools;36.0.0'
       - name: Run checks and build APKs
         run: gradle :app:testDebugUnitTest :app:assembleDebug :app:assembleRelease :app:lintDebug --no-daemon
       - name: Name and verify APKs

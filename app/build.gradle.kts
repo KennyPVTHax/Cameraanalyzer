@@ -1,7 +1,7 @@
 plugins { id("com.android.application"); id("org.jetbrains.kotlin.android") }
 android {
     namespace = "tech.cameraanalyzer"
-    compileSdk = 35
+    compileSdk = 36
     defaultConfig {
         applicationId = "tech.cameraanalyzer"
         minSdk = 28
