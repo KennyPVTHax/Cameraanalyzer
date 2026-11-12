@@ -133,7 +133,7 @@ class MainActivity : Activity() {
             }
         } catch (_: Exception) { unreadable++ }
         val technologies = found.keys.toList()
-        val classification = when { unreadable > 0 && dexCount == 0 -> "Unable to analyze"; technologies.isNotEmpty() -> "Possible camera implementation"; else -> "No recognizable camera indicators" }
+        val classification = AnalysisClassification.classify(unreadable, dexCount, technologies)
         val evidence = found.flatMap { (tech, items) -> items.distinct().take(8).map { "$tech: $it" } }
         return JSONObject().apply {
             put("app", try { packageManager.getApplicationLabel(app).toString() } catch (_: Exception) { app.packageName })
